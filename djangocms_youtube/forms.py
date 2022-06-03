@@ -17,6 +17,9 @@ class YoutubeModelForm(forms.ModelForm):
             'video_url': YoutubeVideoURLWidget(),
         }
 
+    class Media:
+        js = ('admin/js/jquery.init.js',)
+
     def clean_video_url(self):
         video_url = self.cleaned_data['video_url']
         pattern = (

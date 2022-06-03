@@ -10,6 +10,9 @@ from .models import Youtube
 class YoutubeVideoURLWidget(forms.TextInput):
     model = Youtube
 
+    class Media:
+        js = ('admin/js/jquery.init.js',)
+
     def render(self, name, value, attrs=None, renderer=None):
         if attrs is None:
             attrs = {}
